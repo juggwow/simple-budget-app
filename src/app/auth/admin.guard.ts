@@ -15,6 +15,6 @@ export const adminGuard = (next: ActivatedRouteSnapshot) => {
 export const loginGuard = (next: ActivatedRouteSnapshot) => {
   const loggedInUser = inject(AuthService).getLoggedInUser();
   return !loggedInUser
-    ? true
+    ? true 
     : createUrlTreeFromSnapshot(next, [ '/requirement-list']);
 };

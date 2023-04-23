@@ -1,0 +1,15 @@
+<div class="w-75 row">
+  <div class="p-3">
+    {{vg.id}}
+  </div>
+  <div class="p-3">
+    {{vg.title}}
+  </div>
+  <div class="p-3">
+    {{vg.contactMobileNo | mobileFormat}}
+  </div>
+  <div class="p-3">
+    {{vg.status | statusFormat}}
+  </div>
+  <button class="btn btn-secondary my-3" style="max-width:150px" (click)="onBack()" >back</button>
+</div>

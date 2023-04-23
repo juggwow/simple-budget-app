@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RequirementListComponent } from './requirement-list/requirement-list.component';
+import { AuthService } from './auth/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,19 @@ import { RequirementListComponent } from './requirement-list/requirement-list.co
 export class AppComponent {
   title = 'simple-budget-app';
 
-  constructor() {
+  isLoggedin : string =''
+
+  constructor(private authService: AuthService) {
   }
+
+  loggout(): void{
+    this.authService.setLoggedOut()
+  }
+
+  ngOnInit() {
+    this.authService.getLoggedInUser()
+    this.authService.shareloggedInUser.subscribe(v => this.isLoggedin = v)
+  }
+
 
 }
